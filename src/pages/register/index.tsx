@@ -2,7 +2,7 @@ import { Button, Flex, Heading, Input, Stack } from '@chakra-ui/react'
 import { Link, useNavigate } from 'react-router-dom'
 import { colors } from '../../utils/Themes'
 
-function Login() {
+function Register() {
   const navigate = useNavigate()
 
   return (
@@ -23,7 +23,7 @@ function Login() {
         alignItems="center"
         borderRadius="10px"
         gap="10%"
-        pt="5%"
+        pt="4%"
       >
         <Heading color="white">BLOG</Heading>
         <Stack
@@ -33,6 +33,27 @@ function Login() {
           alignItems="center"
           justifyContent="center"
         >
+          <Flex
+            w="100%"
+            flexDir="row"
+            justifyContent="center"
+            alignItems="center"
+            gap="2%"
+          >
+            <Input
+              w="34%"
+              variant="flushed"
+              placeholder="Name:"
+              color="whitesmoke"
+            />
+            <Input
+              w="34%"
+              variant="flushed"
+              placeholder="Last Name:"
+              color="whitesmoke"
+            />
+          </Flex>
+
           <Input
             w="70%"
             variant="flushed"
@@ -42,9 +63,29 @@ function Login() {
           <Input
             w="70%"
             variant="flushed"
-            placeholder="Password:"
+            placeholder="Email:"
             color="whitesmoke"
           />
+          <Flex
+            w="100%"
+            flexDir="row"
+            justifyContent="center"
+            alignItems="center"
+            gap="2%"
+          >
+            <Input
+              w="34%"
+              variant="flushed"
+              placeholder="Password:"
+              color="whitesmoke"
+            />
+            <Input
+              w="34%"
+              variant="flushed"
+              placeholder="Confirm Password:"
+              color="whitesmoke"
+            />
+          </Flex>
         </Stack>
         <Stack
           w="100%"
@@ -53,15 +94,9 @@ function Login() {
           alignItems="center"
           justifyContent="center"
         >
-          <Button w="70%" onClick={() => navigate('/')}>
-            Login
-          </Button>
-          <Button
-            w="70%"
-            colorScheme="blue"
-            onClick={() => navigate('/register')}
-          >
-            Register
+          <Button w="70%">Register</Button>
+          <Button w="70%" colorScheme="blue" onClick={() => navigate('/login')}>
+            Sign In
           </Button>
           <Link
             to="/"
@@ -69,13 +104,11 @@ function Login() {
               color: '#c9c9c9',
               textDecoration: 'underline white'
             }}
-          >
-            Forgot your password?
-          </Link>
+          ></Link>
         </Stack>
       </Stack>
     </Flex>
   )
 }
 
-export default Login
+export default Register

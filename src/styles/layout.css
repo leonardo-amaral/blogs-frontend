@@ -1,0 +1,26 @@
+.link {
+  text-decoration: none;
+  color: white;
+  position: relative;
+  transition: color 0.5s;
+}
+
+.link::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px; /* Altura da linha de animação */
+  background-color: #747474; /* Cor desejada para a animação */
+  transform: translateY(100%); /* Inicia a linha fora da tela */
+  transition: transform 0.5s; /* Duração da animação */
+}
+
+.link:hover {
+  color: #747474; /* Cor desejada para o hover */
+}
+
+.link:hover::before {
+  transform: translateY(0%); /* Animação que traz a linha de baixo para cima */
+}
